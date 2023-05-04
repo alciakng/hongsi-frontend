@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "701494836215",
+    "firebase_url": "https://hongsi-347511-default-rtdb.firebaseio.com",
+    "project_id": "hongsi-347511",
+    "storage_bucket": "hongsi-347511.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701494836215:android:58ac51858f89bf807c4cf2",
+        "android_client_info": {
+          "package_name": "com.example.hongsi_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701494836215-i5g1gg1d9r52pu49qr7pfuim44uvn5go.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hongsi_project",
+            "certificate_hash": "452177b40db4face7a9ec9016b502633dc491673"
+          }
+        },
+        {
+          "client_id": "701494836215-hjps08knc387rgll47impfofmeegl4l3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0jr5UWkGxIxnAXPOEHp65XSa2GL389H0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701494836215-hjps08knc387rgll47impfofmeegl4l3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "701494836215-p18uupkf5rr7b0v9gm6q87c42krs3slo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hongsiProject1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

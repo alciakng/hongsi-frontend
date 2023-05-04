@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Flutter_Web_Navigation2.0"
+		},
+		{
+			"path": "../../../flutter_twitter_clone"
+		},
+		{
+			"path": "../../../flutter_amplify_datastore_demo"
+		},
+		{
+			"path": "../../../amplify_project"
+		}
+	]
+}

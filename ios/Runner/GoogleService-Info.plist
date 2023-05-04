@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>701494836215-nbglumiqqq0e3b93pj49n74vd75cs434.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.701494836215-nbglumiqqq0e3b93pj49n74vd75cs434</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>701494836215-i5g1gg1d9r52pu49qr7pfuim44uvn5go.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA0Er1KOzT64vSlX6PNSHCDWzNmr58nAgk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>701494836215</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.hongsiProject</string>
+	<key>PROJECT_ID</key>
+	<string>hongsi-347511</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hongsi-347511.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:701494836215:ios:067632004500bbff7c4cf2</string>
+	<key>DATABASE_URL</key>
+	<string>https://hongsi-347511-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

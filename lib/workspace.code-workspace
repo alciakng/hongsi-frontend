@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../flutter_twitter_clone"
+		},
+		{
+			"path": "../../flutter_amplify_datastore_demo"
+		},
+		{
+			"path": "../../Flutter_Web_Navigation2.0"
+		},
+		{
+			"path": "../../amplify_project"
+		},
+		{
+			"path": "../../fluttergram"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}
