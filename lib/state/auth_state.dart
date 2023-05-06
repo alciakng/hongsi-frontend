@@ -43,11 +43,6 @@ import '../model/notify_model.dart';
 /// AuthState
 /// 로그인한 유저의 state management
 class AuthState extends AppState {
-  /* [init] auth_state 변수설정
-    - authStatus :현재 로그인상태 
-    - uid : 현재유저의 uid 
-    - user : 현재유저 (firebase user) -- '23.04.25 firebase user 사용안함 -> Spring boot User를 받아오도록 처리 
-  */
   //User? user;  '23.04.25 firebase user 사용안함 -> Spring boot User를 받아오도록 처리
   AuthStatus authStatus = AuthStatus.NOT_LOGGED_IN;
   late bool aditInfoExisted;
@@ -61,6 +56,13 @@ class AuthState extends AppState {
   /// 유저모델
   UserModel? _userModel;
   UserModel? get userModel => _userModel;
+
+  /* [init] auth_state 변수설정
+    - authStatus :현재 로그인상태 
+    - uid : 현재유저의 uid 
+    - user : 현재유저 (firebase user) -- '23.04.25 firebase user 사용안함 -> Spring boot User를 받아오도록 처리 
+  */
+
   // 유저 프로파일 변경이벤트를 참조하기위한 스냅샷
   //late Stream<DocumentSnapshot>? _profileRef;
 
@@ -1055,6 +1057,19 @@ class AuthState extends AppState {
     );
   }
 
+  /// Trigger when logged-in user's profile change or updated
+  /// Firebase event callback for profile update
+  void _onProfileChanged(DocumentSnapshot event) {
+    final val = event.data();
+    if (val is Map) {
+      final updatedUser = UserModel.fromJson(val);
+      _userModel = updatedUser;
+      cprint('UserModel Updated');
+      getIt<SharedPreferenceHelper>().saveUserProfile(_userModel!);
+      notifyListeners();
+    }
+  }
+
   /*----------------------------------------------------------------
   - 함수 : updateFCMToken 
   - 기능 : FCMToken을 업데이트 한다.
@@ -1076,21 +1091,7 @@ class AuthState extends AppState {
   }
   */
 
-  /// Trigger when logged-in user's profile change or updated
-  /// Firebase event callback for profile update
-  void _onProfileChanged(DocumentSnapshot event) {
-    final val = event.data();
-    if (val is Map) {
-      final updatedUser = UserModel.fromJson(val);
-      _userModel = updatedUser;
-      cprint('UserModel Updated');
-      getIt<SharedPreferenceHelper>().saveUserProfile(_userModel!);
-      notifyListeners();
-    }
-  }
-
   /*
-
   void _onProfileUpdated(DatabaseEvent event) {
     final val = event.snapshot.value;
     if (val is List &&
@@ -1112,6 +1113,5 @@ class AuthState extends AppState {
       notifyListeners();
     }
   }
-
   */
 }
