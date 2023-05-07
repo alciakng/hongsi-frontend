@@ -20,7 +20,8 @@
  - [Provider] 현재까지는 상태관리에 MultiProvider를 활용하고 있음 
 
  <<프로젝트 구조>>
-<img width="303" alt="image" src="https://user-images.githubusercontent.com/10395170/236672382-98a29fd6-b75a-432c-ba5c-f32b7fc5a1b9.png">
+ 
+<img width="271" alt="image" src="https://user-images.githubusercontent.com/10395170/236672433-57039d48-8aed-4dd1-a1c1-12f3f4fb8f52.png">
 
 - [helper] utility 성 공통 
 - [model] 홍시 앱에서 사용하는 데이터 객체 모델 
