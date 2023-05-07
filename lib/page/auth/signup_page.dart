@@ -28,6 +28,9 @@ import 'package:hongsi_project/widgets/common/custom_linear_progress_indicator.d
 /// [enum] - channel사용
 import 'package:hongsi_project/helper/enum.dart';
 
+// [router] goRouter
+import 'package:go_router/go_router.dart';
+
 // defualt 페이지 상수
 const int MAX_PAGE = 3;
 const double INITIAL_PAGE = 0.0;
@@ -342,8 +345,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    var authState = context.read<AuthState>();
-
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -360,19 +361,22 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             // [뒤로가기 버튼을 눌렀을때 로직]
             onTap: () {
+              Navigator.pop(context);
+              /*
               if (_pageController.page == 0) {
-                // 컨트롤러 변수 초기화
+                Navigator.pop(context); 
                 _validDelegate.clearVariable();
-                // 로그인상태인경우 로그아웃처리
-                if (authState.authStatus == AuthStatus.LOGGED_IN) {
-                  authState.logoutCallback();
-                }
-                // 뒤로가기
-                Navigator.pop(context);
+                //로그아웃 처리
+                authState.logoutCallback().then((_) {
+                  // 뒤로가기
+                  context.pop();
+                });
+              } else {
+                _pageController.previousPage(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn);
               }
-              _pageController.previousPage(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeIn);
+              */
             },
           ),
           // [로그인 진행 바]

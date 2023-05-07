@@ -50,7 +50,7 @@ final _router = GoRouter(
       path: '/',
       redirect: (context, state) async {
         // authState
-        var authState = Provider.of<AuthState>(context);
+        var authState = context.read<AuthState>();
         // 현재유저셋팅
         final AuthStatus? status = await authState.getCurrentUser();
 

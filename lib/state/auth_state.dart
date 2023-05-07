@@ -98,6 +98,7 @@ class AuthState extends AppState {
     - kakaoSiginIn signOut
     - firebaseAuth signOut
     - SharedPreferenceHelper clear 
+    - 이력 : 2022.06.15 / 김종환 / 최초생성 
   -----------------------------------*/
   Future<void> logoutCallback() async {
     // 로그인하지 않은 상태로 변경

@@ -9,6 +9,7 @@
  - Firebase 로컬 구성 
    * 안드로이드 : https://firebase.flutter.dev/docs/manual-installation/androidㅎ
    * ios : https://firebase.flutter.dev/docs/manual-installation/ios
+           
            https://pub.dev/packages/google_sign_in (ios 셋팅 방법 참고)
 
 
@@ -20,7 +21,8 @@
  - [Provider] 현재까지는 상태관리에 MultiProvider를 활용하고 있음 
 
  <<프로젝트 구조>>
-├── helper        
+
+├── helper
 │   ├── constant.dart
 │   ├── customRoute.dart
 │   ├── custom_navigation_key.dart

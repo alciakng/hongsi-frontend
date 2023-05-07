@@ -124,7 +124,7 @@ class _AditInfoPageState extends State<AditInfoPage> {
             isPassword: false,
             errorText: _validDelegate.nicknameErrorText,
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           CustomFormField(
@@ -140,11 +140,11 @@ class _AditInfoPageState extends State<AditInfoPage> {
             isPassword: false,
             errorText: _validDelegate.rolenameErrorText,
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           _submitButton(_validDelegate.nameCheckValid ?? false),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           CustomTextButton(
@@ -160,7 +160,7 @@ class _AditInfoPageState extends State<AditInfoPage> {
                               customText(
                                   style: TextStyles.dark16Normal,
                                   "정말 건너뛰시겠습니까?\n일부 서비스가 제한될 수 있습니다"),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Row(
@@ -226,7 +226,7 @@ class _AditInfoPageState extends State<AditInfoPage> {
   -------------------------------------------------------------------------------------------------------------------------*/
   void _submitSocialForm() async {
     loader.showLoader(context);
-    var state = Provider.of<AuthState>(context, listen: false);
+    var state = context.read<AuthState>();
 
     // usermodel 추가정보 셋팅
     if (state.userModel != null) {
@@ -266,7 +266,7 @@ class _AditInfoPageState extends State<AditInfoPage> {
         ScaffoldMessenger.of(context).showSnackBar(
             customSnackbar(msg: "작업을 실패하였습니다.\n네트워크 연결상태를 확인하세요."));
         // 에러메시지는 handleKakaoSignIn에서 처리
-        Navigator.pop(context);
+        context.pop();
       }
     }
   }
@@ -283,7 +283,7 @@ class _AditInfoPageState extends State<AditInfoPage> {
           centerTitle: true,
           leading: GestureDetector(
             // [뒤로가기버튼 아이콘]
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             ),
@@ -294,14 +294,16 @@ class _AditInfoPageState extends State<AditInfoPage> {
                 _validDelegate.clearVariable();
                 // 로그인상태인경우 로그아웃처리
                 if (authState.authStatus == AuthStatus.LOGGED_IN) {
-                  authState.logoutCallback();
+                  authState.logoutCallback().then((_) {
+                    // 뒤로가기
+                    context.pop();
+                  });
                 }
-                // 뒤로가기
-                Navigator.maybePop(context);
+              } else {
+                _pageController.previousPage(
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeIn);
               }
-              _pageController.previousPage(
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeIn);
             },
           ),
           /* [로그인 진행 바] - Social Form에서 진행하지 않음 
