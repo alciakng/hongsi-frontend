@@ -7,7 +7,7 @@
 
  - Flutter 3.7.11 • Dart 2.19.6 
  - Firebase 로컬 구성 
-   * 안드로이드 : https://firebase.flutter.dev/docs/manual-installation/androidㅎ
+   * 안드로이드 : https://firebase.flutter.dev/docs/manual-installation/android
    * ios1 : https://firebase.flutter.dev/docs/manual-installation/ios
    * ios2 : https://pub.dev/packages/google_sign_in (ios 셋팅 방법 참고)
 
